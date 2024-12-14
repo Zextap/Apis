@@ -7,7 +7,7 @@ const app  = express();
 app.use(express.json());
 
 //?-----------Usar el metodo get para hacer una peticion de tipo get-------
-app.get('/api/:res',(request,response)=>{
+app.get('/api/:res',(request,response)=>{ //request -> para recibir parametros | response -> para enviar el contenido 
     const parametro = request.params.res;
     response.send('Esto es una api de node con el parametro '+parametro);
 });
