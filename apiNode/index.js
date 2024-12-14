@@ -7,9 +7,15 @@ const app  = express();
 app.use(express.json());
 
 //?-----------Usar el metodo get para hacer una peticion de tipo get-------
-app.get('/api/:res',(request,response)=>{ //request -> para recibir parametros | response -> para enviar el contenido 
+app.get ('/hola',(parametro,respuesta)=>{
+    let res = {"mensaje" : "!Hola, mundo¡"};
+    respuesta.send(res);
+});
+
+app.get('/hola/:res',(request,response)=>{ //request -> para recibir parametros | response -> para enviar el contenido 
     const parametro = request.params.res;
-    response.send('Esto es una api de node con el parametro '+parametro);
+    let res = {"mensaje" : `Hola,${parametro}`};
+    response.send(res);
 });
 
 //?-----------Declarar el puerto que escucha----------------
