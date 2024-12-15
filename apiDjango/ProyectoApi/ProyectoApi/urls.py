@@ -19,5 +19,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('api.urls'))
+    path('',include('api.urls')) # Añadimos una nueva url que incluya las urls de la app, en este caso api
+                                 # Lo dejamos vacio para que reciba solo las urls de la app
 ]
