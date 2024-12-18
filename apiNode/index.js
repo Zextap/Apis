@@ -19,5 +19,5 @@ app.get('/hola/:res',(request,response)=>{ //request -> para recibir parametros 
 });
 
 //?-----------Declarar el puerto que escucha----------------
-const puerto = process.env.port || 8080;
+const puerto = process.env.port || 8000;
 app.listen(puerto,()=> console.log(`Escuchando en puerto ${puerto}`));
