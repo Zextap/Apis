@@ -2,9 +2,8 @@ version: '3.8'
 
 services:
   node:
-    image: node  # El nombre de tu imagen personalizada de la API
     build:
-      context: ../Apis/apiNode/Dockerfile # Directorio donde está el Dockerfile de la API
+      context: ../Apis/apiNode # Directorio donde está el Dockerfile de la API
     container_name: node
     ports:
       - "3000:3000"  # El puerto 5000 de la API estará accesible en el puerto 5000 de la máquina host  # La API depende de la base de datos
@@ -12,9 +11,8 @@ services:
       - app_network
 
   django:
-    image: django  # El nombre de tu imagen personalizada de MySQL
     build:
-      context: ../Apis/apiDjango/ProyectoApi/Dockerfile # Directorio donde está el Dockerfile de la base de datos
+      context: ../Apis/apiDjango/ProyectoApi # Directorio donde está el Dockerfile de la base de datos
     container_name: django
     ports:
       - "8000:8000"
@@ -22,9 +20,8 @@ services:
       - app_network
 
   java:
-    image: java
     build: 
-      context: ../Apis/demo/
+      context: ../Apis/demo
     container_name: java
     ports:
       - "8080:8080"
